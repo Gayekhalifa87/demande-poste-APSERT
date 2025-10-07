@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <title>Formulaire de candidature - APSERT</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <link rel="stylesheet" href="formulaire.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="container">
@@ -14,13 +14,6 @@
     📅 Date limite de dépôt : <strong>10 octobre 2025</strong><br>
     🏛️ Assemblée générale du bureau : <strong>Dimanche 05 octobre 2025</strong>
   </div>
-<!-- 
-  <div class="note">
-    Remplissez tous les champs puis cliquez sur <strong>Envoyer ma candidature</strong>.
-    Les candidatures seront reçues par email sur : <strong>gayekhalifa99@gmail.com</strong><br>
-    <em>Remarque : pour que l'envoi arrive automatiquement sur cet email, vous devez connecter ce formulaire à un service d'envoi (ex. Formspree) ou l'héberger avec un traitement côté serveur.</em>
-  </div> -->
-
 
   <form id="candidatureForm" method="POST" action="https://formspree.io/f/meorljve">
     <label for="nom">Nom complet du candidat</label>
@@ -29,7 +22,7 @@
     <div class="row">
       <div>
         <label for="date_naissance">Date de naissance</label>
-        <input type="date" id="date_naissance" name="Date de naissance" placeholder="JJ/MM/AAAA" required>
+        <input type="date" id="date_naissance" name="Date de naissance" required>
       </div>
       <div>
         <label for="lieu_naissance">Lieu de naissance</label>
@@ -44,7 +37,7 @@
     <input type="text" id="faculte" name="Faculté ou école fréquentée" required>
 
     <label for="poste">Poste pour lequel vous postulez</label>
-    <select id="poste" name="Poste à candidater" required>
+<!--     <select id="poste" name="Poste à candidater" required>
       <option value="">-- Choisissez un poste --</option>
       <option>Porte Parole et Communication (PPC)</option>
       <option>Adjoint(e) Porte Parole et Communication</option>
@@ -63,7 +56,50 @@
       <option>Adjoint(e) PCC</option>
       <option>PCSP (Président Commission Sportive)</option>
       <option>Adjoint(e) PCSP</option>
-    </select>
+    </select> -->
+    <label for="poste">Poste pour lequel vous postulez</label>
+<select id="poste" name="Poste à candidater" required>
+  <option value="">-- Choisissez un poste --</option>
+  
+  <option>Président(e) de la Commission Sociale (PCS)</option>
+  <option>Adjoint(e) Président(e) de la Commission Sociale</option>
+  
+  <option>Président(e) de la Commission Finance (PCF)</option>
+  <option>Adjoint(e) Président(e) de la Commission Finance</option>
+  
+  <option>Président(e) de la Commission Pédagogique (PCP)</option>
+  <option>Adjoint(e) Président(e) de la Commission Pédagogique</option>
+  
+  <option>Chargé(e) des Relations Extérieures (CRE)</option>
+  <option>Adjoint(e) Chargé(e) des Relations Extérieures</option>
+  
+  <option>Chargé(e) de l’Organisation (CO)</option>
+  <option>Adjoint(e) Chargé(e) de l’Organisation</option>
+  
+  <option>Chargé(e) de la Communication et des Relations Publiques (CCRP)</option>
+  <option>Adjoint(e) Chargé(e) de la Communication</option>
+  
+  <option>Chargé(e) des Projets et Activités (CPA)</option>
+  <option>Adjoint(e) Chargé(e) des Projets et Activités</option>
+  
+  <option>Commissaire aux Comptes (CAC)</option>
+  <option>Adjoint(e) Commissaire aux Comptes</option>
+  
+  <option>Présidente de la Commission Féminine (PCF)</option>
+  <option>Adjointe Présidente de la Commission Féminine</option>
+  
+  <option>Vice-président(e)</option>
+  
+  <option>Secrétaire Général(e) (SG)</option>
+  <option>Adjoint(e) Secrétaire Général(e)</option>
+  
+  <option>Trésorier(e)</option>
+  <option>Adjoint(e) Trésorier(e)</option>
+  
+  <option>Président(e) de la Commission Sportive et Culturelle (PCSC)</option>
+  <option>Adjoint(e) Président(e) de la Commission Sportive et Culturelle</option>
+</select>
+
 
     <label for="motivation">Motivation pour ce poste</label>
     <textarea id="motivation" name="Motivation" required placeholder="Expliquez en quelques phrases pourquoi vous êtes le/la mieux placé(e) pour ce poste..."></textarea>
@@ -89,26 +125,9 @@
 
     <button type="submit" class="btn">✨ Envoyer ma candidature</button>
   </form>
-
-  <!-- <div class="footer">
-    <strong>💡 Remarques techniques et alternatives :</strong>
-    <ol>
-      <li>Pour recevoir automatiquement les candidatures par email sans héberger de serveur, configurez Formspree (ou équivalent) et remplacez l'URL d'action.</li>
-      <li><strong>Option recommandée :</strong> Créez un Google Form avec les mêmes champs, puis partagez le lien public. Les réponses seront centralisées dans Google Sheets.</li>
-      <li>Sinon, envoyez ce fichier HTML à un administrateur web qui le connectera directement à votre adresse email.</li>
-    </ol>
-  </div> -->
 </div>
 
 <script>
-  document.getElementById('candidatureForm').addEventListener('submit', function(e) {
-    var action = this.getAttribute('action') || '';
-    if (action.indexOf('YOUR_FORM_ID') !== -1) {
-      e.preventDefault();
-      alert("⚠️ Le formulaire n'est pas encore connecté à un service d'envoi (Formspree).\n\n📝 Remplacez l'action par votre endpoint Formspree (https://formspree.io/f/ID) ou hébergez le formulaire avec un script serveur.\n\n💡 Sinon, copiez le contenu du formulaire et envoyez-le par email à gayekhalifa99@gmail.com");
-    }
-  });
-
   // Animation au focus des inputs
   const inputs = document.querySelectorAll('input, textarea, select');
   inputs.forEach(input => {
